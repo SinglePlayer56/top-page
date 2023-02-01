@@ -40,6 +40,12 @@ export const Rating = forwardRef (({error, rating, setRating, isEditable, tabInd
                     tabIndex={computeFocus(rating, i)}
                     onKeyDown={handleKey}
                     ref={r => ratingArrayRef.current?.push(r)}
+                    role={isEditable ? 'slider' : ''}
+                    aria-invalid={error ? true: false}
+                    aria-valuenow={rating}
+                    aria-valuemax={5}
+                    aria-valuemin={1}
+                    aria-label={isEditable ? 'Укажите рейтинг' : ('рейтинг' + rating)}
                 >
                     <StarIcon/>
                 </span>
@@ -89,7 +95,7 @@ export const Rating = forwardRef (({error, rating, setRating, isEditable, tabInd
             [styles.error]: error
         })}>
             {ratingArray.map((r: JSX.Element, i: number) => (<span key={i}>{r}</span>))}
-            {error && <span className={styles.ratingMessage}>{error.message}</span>}
+            {error && <span role={"alert"} className={styles.ratingMessage}>{error.message}</span>}
         </div>
     );
 });
