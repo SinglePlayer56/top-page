@@ -1,0 +1,47 @@
+.cardTitle {
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 27px;
+}
+
+.cardText {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 29px;
+}
+
+.wrapperCard {
+	display: grid;
+	grid-template-columns: 50px 1fr;
+
+	align-items: center;
+	gap: 10px 40px;
+}
+
+.icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 50px;
+	height: 50px;
+
+	border-radius: 50%;
+	background-color: #C8F8E4;
+}
+
+.line {
+	width: 2px;
+	height: 80%;
+
+	background-color: #D2D2D2;
+	justify-self: center;
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 30px;
+
+	margin-bottom: 30px;
+}

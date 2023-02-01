@@ -1,0 +1,18 @@
+.p {
+	margin: 0;
+
+	font-weight: 400;
+	line-height: 24px;
+}
+
+.max {
+	font-size: 16px;
+}
+
+.middle {
+	font-size: 14px;
+}
+
+.min {
+	font-size: 12px;
+}

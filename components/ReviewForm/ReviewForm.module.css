@@ -1,0 +1,105 @@
+.reviewForm {
+	display: grid;
+	align-items: center;
+
+	font-size: 14px;
+	line-height: 24px;
+	grid-template-columns: [start] auto 1fr auto [end];
+	gap: 20px 30px;
+}
+
+.description {
+	grid-column: start / end;
+}
+
+.submit {
+	grid-column: start / end;
+}
+
+.title {
+	justify-self: left;
+}
+
+.info {
+	margin-left: 15px;
+}
+
+.rating {
+	display: flex;
+	gap: 20px;
+}
+
+.stars {
+	white-space: nowrap;
+}
+
+.panel {
+	position: relative;
+
+	margin-top: 20px;
+	padding: 20px;
+
+	border-radius: 5px;
+}
+
+.success {
+	background: var(--green-light);
+}
+
+.error {
+	background: var(--red-light);
+}
+
+.successTitle {
+	font-weight: bold;
+}
+
+.close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+
+	cursor: pointer;
+}
+
+.error.close path {
+	stroke: var(--red);
+}
+
+@media screen and (max-width: 1140px) {
+	.reviewForm {
+		grid-template-columns: [start] 1fr 1fr [end];
+	}
+
+	.reviewForm input {
+		width: 100%;
+	}
+
+	.title {
+		justify-self: normal;
+	}
+
+	.submit {
+		display: grid;
+		grid-template-columns: 1fr;
+		justify-items: left;
+		gap: 10px;
+	}
+
+	.info {
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.reviewForm {
+		grid-template-columns: [start] 1fr [end];
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.close {
+		top: 10px;
+		right: 10px;
+	}
+}
