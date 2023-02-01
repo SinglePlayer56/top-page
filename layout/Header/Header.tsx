@@ -2,14 +2,16 @@ import {IHeaderProps} from "./Header.props";
 import styles from "./Header.module.css";
 import Logo from '../logo.svg';
 import cn from "classnames";
-import {motion} from 'framer-motion';
-import {ButtonIcon} from "../../components/ButtonIcon/ButtonIcon";
+import {motion, useReducedMotion} from 'framer-motion';
+
 import {Sidebar} from "../Sidebar/Sidebar";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
+import {ButtonIcon} from "../../components";
 
 export const Header = ({className, ...props}: IHeaderProps): JSX.Element => {
     const [isOpened, setIsOpened] = useState<boolean>(false);
+    const shouldReduceMotion = useReducedMotion();
     const router = useRouter();
 
     useEffect(() => {
@@ -25,7 +27,7 @@ export const Header = ({className, ...props}: IHeaderProps): JSX.Element => {
             }
         },
         closed: {
-            opacity: 0,
+            opacity: shouldReduceMotion ? 1 : 0,
             x: '100%'
         }
     };
