@@ -12,8 +12,9 @@
 }
 
 .firstLevelList {
-	list-style: none;
 	padding: 0;
+
+	list-style: none;
 }
 
 .firstLevelActive,
@@ -28,19 +29,19 @@
 
 .secondLevel {
 	margin-bottom: 10px;
+	padding: 0;
 
 	cursor: pointer;
 	text-transform: uppercase;
 
 	color: var(--gray-dark);
+	border: none;
+	outline-offset: -1px;
+	background: none;
 
 	font-size: 12px;
 	font-weight: 300;
 	line-height: 16px;
-	outline-offset: -1px;
-	background: none;
-	border: none;
-	padding: 0;
 }
 
 .secondBlock {
@@ -48,14 +49,17 @@
 	margin-left: 12px;
 	padding: 0 0 0 32px;
 
-	border-left: 1px solid #DFDFDF;
 	list-style: none;
+
+	border-left: 1px solid #DFDFDF;
 }
 
 .secondLevelBlock {
 	overflow: hidden;
-	list-style: none;
+
 	padding: 0;
+
+	list-style: none;
 }
 
 .thirdLevel {
@@ -64,11 +68,11 @@
 	cursor: pointer;
 
 	color: var(--gray-dark);
+	outline-offset: -1px;
 
 	font-size: 14px;
 	font-weight: 500;
 	line-height: 19px;
-	outline-offset: -1px;
 }
 
 .thirdLevelActive,

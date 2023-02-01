@@ -1,6 +1,11 @@
 .product {
 	display: grid;
-	grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratestart] auto [end];
+	grid-template-columns:
+			[start] 70px [logoend]
+			30px [titlestart] calc(50% - 100px)
+			[middle] 1fr [pricestart] auto
+			[priceend] 40px [creditstart] auto
+			[creditend] 40px [ratestart] auto [end];
 
 	margin-top: 30px;
 	padding: 30px;
@@ -39,16 +44,8 @@
 	grid-column: start / end;
 }
 
-.description {
-	grid-column: start / end;
-}
-
 .feature {
 	grid-column: start / middle;
-}
-
-.advBlock {
-	grid-column: middle / end;
 }
 
 .actions {
@@ -93,6 +90,8 @@
 }
 
 .description {
+	grid-column: start / end;
+
 	margin-bottom: 15px;
 
 	font-size: 16px;
@@ -112,6 +111,8 @@
 }
 
 .advBlock {
+	grid-column: middle / end;
+
 	font-size: 16px;
 	line-height: 22px;
 }
@@ -126,7 +127,7 @@
 	margin-bottom: 20px;
 	padding-left: 15px;
 
-	border-left: 2px solid #1Dc37e;
+	border-left: 2px solid #1DC37E;
 }
 
 .disadvantages {
@@ -162,8 +163,9 @@
 }
 
 .reviews {
-	padding: 30px;
 	overflow: hidden;
+
+	padding: 30px;
 }
 
 @media screen and (max-width: 1320px) {

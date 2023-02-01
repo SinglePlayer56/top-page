@@ -22,9 +22,10 @@
 	position: absolute;
 	bottom: -20px;
 	left: 0;
+
 	color: var(--red);
 }
 
-.error svg{
+.error svg {
 	stroke: var(--red);
 }
