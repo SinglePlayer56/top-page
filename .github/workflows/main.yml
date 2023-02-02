@@ -12,5 +12,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           file: Dockerfile
-          push: false
+          push: true
           tags: user/app:latest
