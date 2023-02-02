@@ -9,7 +9,7 @@ import {API} from "../../helpers/api";
 export const Type = ({firstCategory} :TypeProps):JSX.Element => {
     return (
         <>
-            Type: {firstCategory}
+            Выберите категорию
         </>
     );
 };
