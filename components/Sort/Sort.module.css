@@ -43,3 +43,9 @@
 .sortName {
 	display: none;
 }
+
+@media screen and (max-width: 652px) {
+	.sort {
+		grid-column: 1 / -1;
+	}
+}
