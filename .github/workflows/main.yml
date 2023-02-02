@@ -12,8 +12,8 @@ jobs:
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
-          registry: ghcr.io/v2
-          name: ghcr.io/v2/singleplayer56/top-page/top-page
+          registry: ghcr.io
+          name: ghcr.io/singleplayer56/top-page/top-page
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           tags: "develop"
