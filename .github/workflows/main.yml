@@ -8,12 +8,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
-          registry: https://ghcr.io/v2/
-          name: https://ghcr.io/v2/singleplayer56/top-page/top-page
+          registry: docker.pkg.github.com
+          name: docker.pkg.github.com/singleplayer56/top-page/top-page
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           tags: "develop"
