@@ -12,7 +12,8 @@ jobs:
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
-          name: myDocker/singleplayer56/top-page/top-page
+          registry: docker.pkg.github.com
+          name: docker.pkg.github.com/singleplayer56/top-page/top-page
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           tags: "develop"
