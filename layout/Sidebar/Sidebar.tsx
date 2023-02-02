@@ -1,9 +1,9 @@
 import {ISidebarProps} from "./Sideber.props";
 import {Menu} from "../Menu/Menu";
-import {Search} from "../../components/Search/Search";
 import Logo from '../logo.svg';
-import styles from './Sidebar.module.css';
+import styles from "./Sidebar.module.css";
 import cn from "classnames";
+import {Search} from "../../components";
 
 export const Sidebar = ({className,...props}: ISidebarProps): JSX.Element => {
     return (
