@@ -9,8 +9,13 @@ import {firstLevelMenu} from "../../helpers/helpers";
 import {TopPageComponent} from "../../page-components";
 import {API} from "../../helpers/api";
 import Head from 'next/head';
+import {Error404} from "../404";
 
-const TopPage = ({page, products, firstCategory}: TopPageProps):JSX.Element => {
+const TopPage = ({page, products, firstCategory}: TopPageProps): JSX.Element => {
+    if (!page || !products) {
+        return <Error404/>;
+    }
+
     return (
         <>
             <Head>
@@ -39,10 +44,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
     return {
         paths: paths,
-        fallback: true
+        fallback: false
     };
 };
-export const getStaticProps:GetStaticProps<TopPageProps> = async ({params}:GetStaticPropsContext<ParsedUrlQuery>) => {
+export const getStaticProps: GetStaticProps<TopPageProps> = async ({params}: GetStaticPropsContext<ParsedUrlQuery>) => {
     if (!params) {
         return {
             notFound: true
@@ -63,7 +68,10 @@ export const getStaticProps:GetStaticProps<TopPageProps> = async ({params}:GetSt
             };
         }
         const {data: page} = await axios.get<ITopPageModel>(API.topPage.byAlias + params.alias);
-        const {data: products} = await axios.post<IProductModel[]>(API.product.find, {category: page.category, limit: 10});
+        const {data: products} = await axios.post<IProductModel[]>(API.product.find, {
+            category: page.category,
+            limit: 10
+        });
 
         return {
             props: {
@@ -79,7 +87,6 @@ export const getStaticProps:GetStaticProps<TopPageProps> = async ({params}:GetSt
         };
     }
 };
-
 
 
 interface TopPageProps extends Record<string, unknown> {
