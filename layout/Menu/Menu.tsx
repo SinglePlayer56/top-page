@@ -1,5 +1,5 @@
 import React, {useContext, KeyboardEvent, useState} from "react";
-import {AppContext} from "../../context/app,context";
+import {AppContext} from "../../context/app.context";
 import {FirstLevelMenuItem, PageItem} from "../../interfaces/menu.interface";
 import styles from './Menu.module.css';
 import cn from 'classnames';
@@ -14,6 +14,7 @@ export const Menu = (): JSX.Element => {
     const [announce, setAnnounce] = useState<'closed' | 'opened' | undefined>();
     const shouldReduceMotion = useReducedMotion();
     const router = useRouter();
+
 
     const variants = {
         visible: {

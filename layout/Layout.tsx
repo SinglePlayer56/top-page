@@ -4,7 +4,7 @@ import {Sidebar} from "./Sidebar/Sidebar";
 import {Footer} from "./Footer/Footer";
 import {FunctionComponent, useState, KeyboardEvent, useRef} from "react";
 import styles from './Layout.module.css';
-import {AppContextProvider, IAppContext} from "../context/app,context";
+import {AppContextProvider, IAppContext} from "../context/app.context";
 import {Up} from "../components";
 import cn from "classnames";
 
