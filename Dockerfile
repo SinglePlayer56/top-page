@@ -1,5 +1,4 @@
 FROM node:18 as build
-RUN docker logout
 WORKDIR /opt/app
 ADD package*.json ./
 RUN npm i --legacy-peer-deps
