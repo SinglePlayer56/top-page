@@ -5,19 +5,11 @@ import {MenuItem} from "../../interfaces/menu.interface";
 import {firstLevelMenu} from "../../helpers/helpers";
 import {TopLevelCategory} from "../../interfaces/page.intefrace";
 import {API} from "../../helpers/api";
-import {useState} from "react";
-import {Htag} from "../../components";
 
 export const Type = ({firstCategory} :TypeProps):JSX.Element => {
-    const [nameCategory, setNameCategory] = useState<string>();
-    for (const category of firstLevelMenu) {
-        if (category.id === firstCategory) {
-            setNameCategory(category.name);
-        }
-    }
     return (
         <>
-            <Htag tag={'h1'}>{nameCategory}</Htag>
+            Type: {firstCategory}
         </>
     );
 };
