@@ -5,11 +5,25 @@ import {MenuItem} from "../../interfaces/menu.interface";
 import {firstLevelMenu} from "../../helpers/helpers";
 import {TopLevelCategory} from "../../interfaces/page.intefrace";
 import {API} from "../../helpers/api";
+import {useEffect, useState} from "react";
+import {Htag} from "../../components";
 
 export const Type = ({firstCategory} :TypeProps):JSX.Element => {
+    const [name, setName] = useState<string>();
+
+    useEffect(() => {
+        for (const category of firstLevelMenu) {
+            if (category.id === firstCategory) {
+                setName(category.name);
+            }
+        }
+    },[firstCategory]);
+
+
+
     return (
         <>
-            Выберите категорию
+            <Htag tag={'h1'}>{name}</Htag>
         </>
     );
 };
